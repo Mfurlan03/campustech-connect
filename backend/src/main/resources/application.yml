@@ -1,0 +1,5 @@
+google:
+  cse:
+    id: "526a7232f49d94e27"
+  api:
+    key: ${GOOGLE_API_KEY}
