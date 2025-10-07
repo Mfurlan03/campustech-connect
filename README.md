@@ -2,10 +2,6 @@
 
 A peer-to-peer laptop marketplace tailored for university students. CampusTech Connect focuses on academic relevance, student trust (university email), and smarter buying decisions via spec-based filters, recommendations by major, wishlists with target prices, and a comparison tool with external market context.
 
-- Topic: Consumer Information Site
-- Course: MIE 350 – Design and Analysis of Information Systems (UofT)
-- Team: Group 2
-
 ## Why this exists
 
 Students often struggle with:
