@@ -93,7 +93,7 @@ Recommendations
 Price Compare
 - GET /compare/{laptopId}
 
-## System Design (from Final Report)
+## System Design 
 
 - Requirements
   - Functional: university email login, spec-based filters, recommendations, wishlist + target price, comparison tool
