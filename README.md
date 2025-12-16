@@ -9,6 +9,7 @@ Students regularly deal with:
 - Laptops that can’t handle required academic software
 - Budget constraints and inconsistent quality on public resale sites
 - Listings that don’t explain whether a device is actually suitable for their program
+
 CampusTech Connect addresses this by limiting access to students, structuring listings around technical specs, and providing tools that help buyers understand whether a laptop makes sense for their major and price range.
 
 ## Core Features
