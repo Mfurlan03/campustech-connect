@@ -1,34 +1,41 @@
 # CampusTech Connect
+CampusTech Connect is a peer-to-peer laptop marketplace built specifically for university students. The idea came from seeing how often students struggle to find reliable devices that actually meet the needs of their programs, especially when budgets are tight and public marketplaces feel risky.
 
-A peer-to-peer laptop marketplace tailored for university students. CampusTech Connect focuses on academic relevance, student trust (university email), and smarter buying decisions via spec-based filters, recommendations by major, wishlists with target prices, and a comparison tool with external market context.
+Instead of being a general resale platform, CampusTech Connect focuses on academic relevance, trust, and context, helping students make better decisions, not just faster ones
 
-## Why this exists
+## Why this project exists
 
-Students often struggle with:
-- Device malfunctions and performance gaps for academic software
-- Budget constraints and unreliable public marketplaces
-- Listings not tailored to academic needs
-
-CampusTech Connect addresses this with student-only access, academic filters, spec comparisons, and price context.
+Students regularly deal with:
+- Laptops that can’t handle required academic software
+- Budget constraints and inconsistent quality on public resale sites
+- Listings that don’t explain whether a device is actually suitable for their program
+- 
+CampusTech Connect addresses this by limiting access to students, structuring listings around technical specs, and providing tools that help buyers understand whether a laptop makes sense for their major and price range.
 
 ## Core Features
 
-- Authentication
-  - University email registration and JWT-based login
-  - Role support: Buyer, Seller (users can perform both)
-- Listings (Seller)
-  - Create, view, update, delete laptop listings
-  - Spec fields: brand, model, CPU, GPU, RAM, storage, price
-  - Listing verification flag
-- Browsing (Buyer)
-  - Search + filters (price, specs, etc.)
-- Wishlist
-  - Add/remove laptops, set/update target price
-  - View your wishlist
-- Recommendations
-  - Program/major-based suggested specs and models
-- Comparison
-  - Compare a listing against similar market options (e.g., via eBay-based criteria) to assess price fairness
+Authentication & Access
+- University-email registration to limit access to students
+- JWT-based authentication
+- Buyer and Seller roles (users can act as both)
+
+Listings (Sellers)
+- Create, update, and manage laptop listings
+- Structured spec fields (CPU, GPU, RAM, storage, price)
+- Optional verification flag to improve trust
+
+Browsing & Search (Buyers)
+- Search and filter listings by specs and price
+- Wishlist functionality with target prices
+- Ability to track listings over time
+
+Recommendations
+- Suggested specs and laptop types based on program or major
+- Designed to help students avoid under- or over-buying
+
+Price Comparison
+- Compare listings against similar devices in external marketplaces
+- Provides price context rather than just “cheap vs expensive”
 
 ## Tech Stack
 
@@ -93,34 +100,9 @@ Recommendations
 Price Compare
 - GET /compare/{laptopId}
 
-## System Design 
-
-- Requirements
-  - Functional: university email login, spec-based filters, recommendations, wishlist + target price, comparison tool
-  - Non-Functional: security (HTTPS, hashed passwords), usability, performance (indexed queries, pagination), maintainability, browser compatibility
-- Models/Diagrams
-  - UML Class Diagram: User, Buyer, Seller, Laptop, WishlistItem, RecommendationRule; relationships for listings and wishlists
-  - DFDs: Context, Level 0, and Level 1 (Compare Laptops)
-  - Statechart: Laptop lifecycle (Listed → In Wishlist/Unlisted/Purchased)
-  - Sequence: Compare flow with external API
-- Testing
-  - Spring mockMvc integration tests for auth, listings, wishlist
-  - Informal usability testing with students → UI clarity improvements
-- Known limitations
-  - Mobile UI is accessible but not fully optimized; responsive redesign and PWA planned
-  - Messaging and full transaction flow out-of-scope for initial version
-
-## Roadmap
-
-- Mobile-first responsive UI, improved navigation and touch targets
-- Progressive Web App (offline, installable)
-- Performance and security testing (JMeter/Locust, pentests)
-- Usability improvements (clearer compare/wishlist affordances)
-- Enhanced comparison data sources and caching
-- Optional in-app messaging and admin verification workflows
-
 ## Team
 
-- Frontend: Ali Ahmad, Kuval Brar, Samrath Singh, Michael Furlano
+This project was built as a team effort. Roles included backend development, frontend prototyping, documentation, and presentation.
+
 - Backend: Nithilan Suresh, Fengrui Yang, Peter Bing, Isabella Liang
-- Roles include presenters, editors, and Scrum Master; see report for details
+- Frontend / Product: Ali Ahmad, Kuval Brar, Samrath Singh, Michael Furlano
