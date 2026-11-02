@@ -1,4 +1,7 @@
 # CampusTech Connect
+
+[![CI](https://github.com/Mfurlan03/campustech-connect/actions/workflows/ci.yml/badge.svg)](https://github.com/Mfurlan03/campustech-connect/actions/workflows/ci.yml)
+![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7-green)
 CampusTech Connect is a peer-to-peer laptop marketplace built specifically for university students. The idea came from seeing how often students struggle to find reliable devices that actually meet the needs of their programs, especially when budgets are tight and public marketplaces feel risky.
 
 Instead of being a general resale platform, CampusTech Connect focuses on academic relevance, trust, and context, helping students make better decisions, not just faster ones
@@ -50,28 +53,30 @@ Price Comparison
 
 Prereqs: Java 17, Maven, Docker (optional)
 
-Local run:
+Local run (H2 in-memory database, seeded from `data.sql`):
 ```bash
-cd CampusConnect
-./mvnw clean spring-boot:run
+cd backend
+export JWT_SECRET="$(openssl rand -hex 32)"   # optional locally; required anywhere shared
+export GOOGLE_API_KEY=...                      # optional: enables /compare price lookups
+./mvnw spring-boot:run
 ```
 
 Tests:
 ```bash
-./mvnw test
+cd backend && ./mvnw test
 ```
 
-Docker:
+AppSmith frontend prototype (optional):
 ```bash
-docker compose up --build
+cd backend && docker compose -f docker-compose.dev.yml up
 ```
 
-Config:
-- Edit src/main/resources/application.yml for DB and JWT settings.
+Configuration:
+- Secrets come from environment variables (`JWT_SECRET`, `GOOGLE_API_KEY`) and are never committed.
+- Other settings live in `backend/src/main/resources/application.properties` / `application.yml`.
 
 Swagger:
-- http://localhost:8080/swagger-ui
-- http://localhost:8080/swagger-ui/index.html
+- http://localhost:8080/api/swagger-ui/index.html (the API is served under the `/api` context path)
 
 ## API Overview
 
