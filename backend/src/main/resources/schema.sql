@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS laptops (
 );
 
 -- Indexes for faster searches
-CREATE INDEX idx_brand ON laptops(brand);
-CREATE INDEX idx_price ON laptops(price);
+CREATE INDEX IF NOT EXISTS idx_brand ON laptops(brand);
+CREATE INDEX IF NOT EXISTS idx_price ON laptops(price);
 
 -- =============================================
 -- Table: wishlist (Saved items for buyers)
